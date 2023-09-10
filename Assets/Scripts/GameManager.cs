@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager Instance;
+    public SharedState sharedState = new SharedState();
 
     public void Awake()
     {
@@ -18,15 +19,27 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }    
+}
+
+public class SharedState {
+    private string _userName;
+    // encapsulation
+    public string userName { get {
+            return this._userName;
+        } set {
+            _userName = value.Length >= 3 ? value : "";
+        }
     }
 }
