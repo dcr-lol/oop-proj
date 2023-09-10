@@ -29,10 +29,10 @@ public class MenuUiManager : MonoBehaviour
         welcomeMessage.text = $"Welcome to OOP {GameManager.Instance.sharedState.userName}";
         if (GameManager.Instance.sharedState.userName.Length > 2)
         {
-            continueButton.image.color = Color.yellow;
+            continueButton.image.color = Color.green;
         }
         else { 
-            continueButton.image.color= Color.gray;
+            continueButton.image.color= Color.red;
         }
 
     }
